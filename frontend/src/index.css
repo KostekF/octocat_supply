@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee:wght@400&family=Nunito:wght@500;700;900&display=swap');
 @import 'slick-carousel/slick/slick.css';
 @import 'slick-carousel/slick/slick-theme.css';
 
@@ -96,4 +97,138 @@ body {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
+}
+
+.party-cats-page {
+  font-family: 'Nunito', 'Inter', sans-serif;
+}
+
+.party-cats-title {
+  font-family: 'Bungee', 'Nunito', sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.party-cats-kicker {
+  color: #76B852;
+  font-weight: 800;
+}
+
+.party-cats-aurora {
+  position: absolute;
+  inset: -10% -20%;
+  background:
+    radial-gradient(circle at 18% 26%, rgba(255, 136, 77, 0.22), transparent 45%),
+    radial-gradient(circle at 84% 12%, rgba(118, 184, 82, 0.28), transparent 44%),
+    radial-gradient(circle at 60% 82%, rgba(17, 138, 178, 0.24), transparent 42%);
+  filter: blur(6px);
+}
+
+.party-cats-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.17;
+  background-image:
+    linear-gradient(to right, rgba(118, 184, 82, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(118, 184, 82, 0.25) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.party-cats-stage {
+  backdrop-filter: blur(6px);
+}
+
+.party-cats-cat-card {
+  position: relative;
+}
+
+.party-cats-cat {
+  font-size: clamp(1.4rem, 2vw, 1.9rem);
+  line-height: 1;
+  font-weight: 900;
+  display: inline-block;
+  transform-origin: center bottom;
+  text-shadow: 0 0 10px rgba(118, 184, 82, 0.35);
+}
+
+.party-cats-dance-a {
+  animation: party-cats-dance-a 1.9s ease-in-out infinite;
+}
+
+.party-cats-dance-b {
+  animation: party-cats-dance-b 2.2s ease-in-out infinite;
+}
+
+.party-cats-dance-c {
+  animation: party-cats-dance-c 2.4s ease-in-out infinite;
+}
+
+.party-cats-confetti {
+  position: absolute;
+  top: -12px;
+  opacity: 0.95;
+  animation-name: party-cats-fall;
+  animation-timing-function: cubic-bezier(0.17, 0.67, 0.25, 1);
+  animation-fill-mode: forwards;
+  transform-origin: center;
+}
+
+.party-cats-confetti.circle {
+  border-radius: 999px;
+}
+
+.party-cats-confetti.diamond {
+  transform: rotate(45deg);
+}
+
+@keyframes party-cats-dance-a {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(-8deg);
+  }
+  60% {
+    transform: translateY(2px) rotate(9deg);
+  }
+}
+
+@keyframes party-cats-dance-b {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  35% {
+    transform: translateY(-9px) scale(1.04);
+  }
+  70% {
+    transform: translateY(1px) scale(0.97);
+  }
+}
+
+@keyframes party-cats-dance-c {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  30% {
+    transform: translateY(-7px) rotate(8deg) scale(1.03);
+  }
+  65% {
+    transform: translateY(1px) rotate(-9deg) scale(0.98);
+  }
+}
+
+@keyframes party-cats-fall {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) rotate(0deg);
+  }
+  8% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(115vh) rotate(560deg);
+  }
 }
